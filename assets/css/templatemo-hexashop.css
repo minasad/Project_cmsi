@@ -789,6 +789,7 @@ Men
   color: #2a2a2a;
   font-weight: 700;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 #men .item .down-content span {
@@ -943,6 +944,7 @@ Women
   position: relative;
   z-index: 3;
   background-color: #fff;
+  
 }
 
 #women .item .down-content h4 {
@@ -950,6 +952,7 @@ Women
   color: #2a2a2a;
   font-weight: 700;
   margin-bottom: 8px;
+  text-align: center;
 }
 
 #women .item .down-content span {

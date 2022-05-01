@@ -1,3 +1,29 @@
+<?php 
+  //creating connection to database
+  //die();
+$con=mysqli_connect("localhost","root","","database_customers") or die(mysqli_error());
+
+  //check whether submit button is pressed or not
+if($_POST)
+{
+  //fetching and storing the form data in variables
+$Name = $con->real_escape_string($_POST['nom']);
+$Email = $con->real_escape_string($_POST['email']);
+$comments = $con->real_escape_string($_POST['message']);
+
+  //query to insert the variable data into the database
+$sql="INSERT INTO contactus (nom, email, message) VALUES ('".$Name."','".$Email."', '".$comments."')";
+
+  //Execute the query and returning a message
+if(!$result = $con->query($sql)){
+die('Error occured [' . $con->error . ']');
+}
+else
+   echo "Nous nous ferons un plaisir de considérer votre demande";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -110,7 +136,7 @@ https://templatemo.com/tm-571-hexashop
                         <h2>Envoyez nous un message!</h2>
                         <span>Nous vous reviendrons au plus vite !!</span>
                     </div>
-                    <form id="contact" action="contact_us.php" method="post">
+                    <form id="contact" action="contact.php" method="post">
                         <div class="row">
                           <div class="col-lg-6">
                             <fieldset>
